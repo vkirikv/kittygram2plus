@@ -1,0 +1,40 @@
+POST http://127.0.0.1:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+  "username": "user_2",
+  "password": "Aa_12345"
+}
+
+###
+
+user_1
+"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY1MzUxNTk0MywianRpIjoiYjQwOTFjZGY5MjA0NDM4ZWFlMjQyODM4YjU1OWEwYzAiLCJ1c2VyX2lkIjoxfQ.c_PtwU2j5qjZeKJxnV4-2rGPcSukSKSH9oqCTRdikIo",
+"access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUzNTE1OTQzLCJqdGkiOiI4M2MwZDNiN2ViMzk0ZjI5YWFlYWZjNWM5MGU2N2RmNiIsInVzZXJfaWQiOjF9.yIWYSHrk_zdNNKPFJtUR-6tSFLJYx2AVhqOWNvY8B4k"
+
+user_2
+"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY1MzUxNjA1OCwianRpIjoiZmIzNzQwY2M5YjQ1NDYwNTgwNDM5YjVlMmQyYTYyN2MiLCJ1c2VyX2lkIjoyfQ.b4pCAp1df94SI0jvuNGd0EDR8__luyOqoenTbL97dkE",
+"access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUzNTE2MDU4LCJqdGkiOiJjMTQwNWJhYzQ2NDM0ZTY5OTU5OWJmZGY0ZTRkNjhjMCIsInVzZXJfaWQiOjJ9.OJzxA7_7Qq_JZOLWuwDriwL0vWOrpTkBccqz3D_yhtM"
+
+###
+
+PATCH http://127.0.0.1:8000/cats/1/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUzNTE2MDU4LCJqdGkiOiJjMTQwNWJhYzQ2NDM0ZTY5OTU5OWJmZGY0ZTRkNjhjMCIsInVzZXJfaWQiOjJ9.OJzxA7_7Qq_JZOLWuwDriwL0vWOrpTkBccqz3D_yhtM
+Content-Type: application/json
+
+{
+    "color": "White"
+
+}
+
+###
+
+GET http://127.0.0.1:8000/cats/1/
+
+###
+
+GET http://127.0.0.1:8000/cats/?limit=2&offset=4
+
+###
+
+GET http://127.0.0.1:8000/cats/?search=cat
